@@ -47,16 +47,20 @@ TARGET_USE_GOOGLE_TELEPHONY := true
 #Blur
 TARGET_ENABLE_BLUR := true
 
-# Debugging
-TARGET_INCLUDE_MATLOG := true
-TARGET_DEFAULT_ADB_ENABLED := true
+##Gapps
+TARGET_CORE_GMS := true
+
+##Build fingerprint
+TARGET_USE_PIXEL_FINGERPRINT := true
 
 # Maintainer
-ALPHA_BUILD_TYPE := Official
-ALPHA_MAINTAINER := Mgm2023
+RISING_MAINTAINER := Mgm2023
+
+##Rising chipset
+RISING_CHIPSET := "Exynos9825"
 
 ## Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/rising/config/common_full_phone.mk)
 
 ## Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
